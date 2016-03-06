@@ -3,9 +3,7 @@
 #include "../include/Curve.h"
 #include "../include/Printer.h" 
 
-CurveShape::CurveShape(std::string fileName, Texture tOutline, Texture tFill) {
-    outlineTexture = tOutline;
-    fillTexture = tFill;
+CurveShape::CurveShape(std::string fileName) {
     std::ifstream infile(fileName);
     if (!infile) {
         cerr << "File not found." << endl;
@@ -21,22 +19,52 @@ CurveShape::CurveShape(std::string fileName, Texture tOutline, Texture tFill) {
         if (line.empty()) continue;
 
         // Using istringstream to read the line into integers.
-        getline(infile, line);
-        std::istringstream iss(line);
+        std::istringstream outl(line);
+        outl >> next;
+        int R = next;
+        outl >> next;
+        int G = next;
+        outl >> next;
+        int B = next;
+        outl >> next;
+        int alpha = next;
+        outlineTexture = Texture::createSingleColorTexture(R,G,B,alpha);
+        //cout << "outline " << R << " " << G << " " << B << " " << alpha << endl;
+
+
+        getline(infile, line); // fill
+        std::istringstream fill(line);
+        
+        fill >> next;
+        R = next;
+        fill >> next;
+        G = next;
+        fill >> next;
+        B = next;
+        fill >> next;
+        alpha = next;
+        fillTexture = Texture::createSingleColorTexture(R,G,B,alpha);
+        //cout << "fill " << R << " " << G << " " << B << " " << alpha << endl;
+
+        getline(infile, line); // koor
+        std::istringstream coor(line);
 
         int tempX;
-        while (iss >> next) {
+        while (coor >> next) {
             if (isX) {
                 isX = 0;
                 tempX = next;
             } else {
                 isX = 1;
                 push_back(tempX, next);
+                //cout << "x,y " << tempX << "," << next << endl; 
             }
-        }
+        }        
+        //cout << endl;
     }
 
-    infile.close();}
+    infile.close();
+}
 
 void CurveShape::push_back(int x, int y){
 	Point p(x,y);

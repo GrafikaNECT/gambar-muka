@@ -8,7 +8,14 @@
 #include <vector>
 
 int main(){
-	CurveShape head(Texture::createSingleColorTexture(232,203,174,255),Texture::createSingleColorTexture(255,240,224,255));
+	CurveCollection babyface("baby-face.txt");
+	Printer::initializePrinter();
+	Printer::drawCanvas(255,255,255,255);
+	babyface.draw();
+	Printer::printToScreen();
+	sleep(5);
+	Printer::finishPrinter();
+	/* CurveShape head(Texture::createSingleColorTexture(232,203,174,255),Texture::createSingleColorTexture(255,240,224,255));
 	CurveShape hair(Texture::createSingleColorTexture(184,150,50,255),Texture::createSingleColorTexture(217,201,95,255));
 	Curve nose(Texture::createSingleColorTexture(232,203,174,255));
 	CurveCollection babyface;
@@ -58,7 +65,7 @@ int main(){
 	babyface.draw();
 	Printer::printToScreen();
 	sleep(5);
-	Printer::finishPrinter();
+	Printer::finishPrinter();*/
 
 	return 0;
 }

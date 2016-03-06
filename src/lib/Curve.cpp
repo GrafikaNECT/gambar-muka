@@ -1,8 +1,7 @@
 #include "../include/Curve.h"
 #include "../include/Printer.h" 
 
-Curve::Curve(std::string fileName, Texture t) : std::vector<Point>() {
-    texture = t;
+Curve::Curve(std::string fileName) : std::vector<Point>() {
     std::ifstream infile(fileName);
     if (!infile) {
         cerr << "File not found." << endl;
@@ -18,19 +17,35 @@ Curve::Curve(std::string fileName, Texture t) : std::vector<Point>() {
         if (line.empty()) continue;
 
         // Using istringstream to read the line into integers.
-        getline(infile, line);
-        std::istringstream iss(line);
+        std::istringstream outl(line);
+        outl >> next;
+        int R = next;
+        outl >> next;
+        int G = next;
+        outl >> next;
+        int B = next;
+        outl >> next;
+        int alpha = next;
+        texture = Texture::createSingleColorTexture(R,G,B,alpha);
+        //cout << "outline " << R << " " << G << " " << B << " " << alpha << endl;
+
+
+        getline(infile, line); // fill
+        getline(infile, line); // koor
+        std::istringstream coor(line);
 
         int tempX;
-        while (iss >> next) {
+        while (coor >> next) {
             if (isX) {
                 isX = 0;
                 tempX = next;
             } else {
                 isX = 1;
                 push_back(tempX, next);
+                //cout << "x,y " << tempX << "," << next << endl; 
             }
-        }
+        }        
+        //cout << endl;
     }
 
     infile.close();

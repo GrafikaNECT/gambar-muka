@@ -11,7 +11,7 @@
 
 class CurveShape: public std::vector<Point>{
 	public:
-	CurveShape(std::string fileName, Texture tOutline = Texture::createSingleColorTexture(0,0,0,0), Texture tFill = Texture::createSingleColorTexture(250,220,210,255));
+	CurveShape(std::string fileName);
 	CurveShape(Texture tOutline = Texture::createSingleColorTexture(0,0,0,0), Texture tFill = Texture::createSingleColorTexture(250,220,210,255)):std::vector<Point>(){outlineTexture=tOutline;fillTexture=tFill;};
 	CurveShape(std::vector<Point>& vec, Texture tOutline = Texture::createSingleColorTexture(0,0,0,0), Texture tFill = Texture::createSingleColorTexture(250,220,210,255)):std::vector<Point>(vec),outlineTexture(tOutline), fillTexture(tFill){};
 

@@ -5,10 +5,14 @@
 #include "CurveShape.h"
 #include <list>
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
 
 class CurveCollection{
 	public:
-
+	CurveCollection(std::string fileName);
 	CurveCollection():numElmts(0){};
 
 	//menambah Curve
