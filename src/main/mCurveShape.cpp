@@ -30,12 +30,18 @@ int main(){
 	points.push_back(Point(120,112));
 	points.push_back(Point(109,102));
 	CurveShape curve(points,Texture::createSingleColorTexture(0,0,0,255));
+	CurveShape curve2(points,Texture::createSingleColorTexture(0,0,0,255),Texture::createSingleColorTexture(0,0,255,255));
 
 	Printer::initializePrinter();
 
 	Printer::drawCanvas(255,255,255,255);
 
 	curve.draw();
+	Printer::printToScreen();
+	sleep(5);
+	Printer::drawCanvas(255,255,255,255);
+
+	curve2.draw();
 	Printer::printToScreen();
 	sleep(5);
 	Printer::finishPrinter();

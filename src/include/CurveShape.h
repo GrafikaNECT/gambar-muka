@@ -7,8 +7,8 @@
 
 class CurveShape: public std::vector<Point>{
 	public:
-	CurveShape(Texture t = Texture::createSingleColorTexture(0,0,0,0)):std::vector<Point>(){texture=t;};
-	CurveShape(std::vector<Point>& vec, Texture t = Texture::createSingleColorTexture(0,0,0,0)):std::vector<Point>(vec),texture(t){};
+	CurveShape(Texture tOutline = Texture::createSingleColorTexture(0,0,0,0), Texture tFill = Texture::createSingleColorTexture(250,220,210,255)):std::vector<Point>(){outlineTexture=tOutline;fillTexture=tFill;};
+	CurveShape(std::vector<Point>& vec, Texture tOutline = Texture::createSingleColorTexture(0,0,0,0), Texture tFill = Texture::createSingleColorTexture(250,220,210,255)):std::vector<Point>(vec),outlineTexture(tOutline), fillTexture(tFill){};
 
 	void push_back(int x, int y); 
 	void push_back(const Point& p){std::vector<Point>::push_back(p);};
@@ -16,7 +16,8 @@ class CurveShape: public std::vector<Point>{
 	void draw();
 
 	private:
-	Texture texture;
+	Texture outlineTexture;
+	Texture fillTexture;
 };
 
 #endif
