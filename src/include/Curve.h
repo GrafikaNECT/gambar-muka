@@ -2,11 +2,16 @@
 #define Curve_h
 
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
 #include "Point.h"
 #include "Texture.h"
 
 class Curve: public std::vector<Point>{
 	public:
+	Curve(std::string fileName, Texture t = Texture::createSingleColorTexture(0,0,0,0));
 	Curve(Texture t = Texture::createSingleColorTexture(0,0,0,0)):std::vector<Point>(){texture=t;};
 	Curve(std::vector<Point>& vec, Texture t = Texture::createSingleColorTexture(0,0,0,0)):std::vector<Point>(vec),texture(t){};
 
