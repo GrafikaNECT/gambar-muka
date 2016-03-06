@@ -23,11 +23,11 @@ class Curve: public std::vector<Point>{
 	void push_back(const Point& p){std::vector<Point>::push_back(p);};
 
 	void draw();
+	Point calculateBezier(double t);
 
 	private:
 	Texture texture;
 	Point getCasteljauPoint(int r, int i, double t);
-	Point calculateBezier(double t);
 };
 
 #endif
