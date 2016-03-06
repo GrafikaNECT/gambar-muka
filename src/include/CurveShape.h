@@ -5,7 +5,7 @@
 #include "Point.h"
 #include "Texture.h"
 
-class Curve: public std::vector<Point>{
+class CurveShape: public std::vector<Point>{
 	public:
 	CurveShape(Texture t = Texture::createSingleColorTexture(0,0,0,0)):std::vector<Point>(){texture=t;};
 	CurveShape(std::vector<Point>& vec, Texture t = Texture::createSingleColorTexture(0,0,0,0)):std::vector<Point>(vec),texture(t){};
