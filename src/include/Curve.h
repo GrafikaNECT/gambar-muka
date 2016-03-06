@@ -23,6 +23,7 @@ class Curve: public std::vector<Point>{
 	void push_back(const Point& p){std::vector<Point>::push_back(p);};
 
 	void draw();
+	std::vector<Point> getPathPoints();
 	Point calculateBezier(double t);
 
 	private:

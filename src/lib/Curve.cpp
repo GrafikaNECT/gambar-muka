@@ -15,22 +15,19 @@ void Curve::draw(){
     }
 }
 
+std::vector<Point> Curve::getPathPoints() {
+    std::vector<Point> tmp;
+    for (double t = 0; t <= 1; t += 0.001) { 
+        tmp.push_back(calculateBezier(t));
+    }
+    return tmp;
+}
+
 Point Curve::getCasteljauPoint(int r, int i, double t) {
 	if (r==0) return this->at(i);
 	Point p1 = getCasteljauPoint(r-1,i,t);
 	Point p2 = getCasteljauPoint(r-1,i+1,t);
 	return Point((int) ((1 - t) * p1.getX() + t * p2.getX()), (int) ((1 - t) * p1.getY() + t * p2.getY()));
-}
-
-Point Curve::calculateBezier(std::vector<Point> vec, double t) {
-    double t2 = t * t;
-    double t3 = t2 * t;
-    double mt = 1-t;
-    double mt2 = mt * mt;
-    double mt3 = mt2 * mt;
-    int x = vec->at(0).getX()*mt3 + 3*vec->at(1).getX()*mt2*t + 3*vec->at(2).getX()*mt*t2 + vec->at(3).getX()*t3;
-    int y = vec->at(0).getY()*mt3 + 3*vec->at(1).getY()*mt2*t + 3*vec->at(2).getY()*mt*t2 + vec->at(3).getY()*t3;
-    return Point(x,y);
 }
 
 Point Curve::calculateBezier(double t) {
