@@ -6,9 +6,9 @@ bin/animshape: src/lib/*.cpp src/include/*.h src/main/mAnimationFace.cpp
 bin:
 	mkdir -p bin
 
-bin/girl:
+bin/girl: src/main/girl/*
 	mkdir -p bin/girl
 	cp src/main/girl/* bin/girl/
 
-bin/Alphabet-2.txt:
+bin/Alphabet-2.txt: src/main/Alphabet-2.txt
 	cp src/main/Alphabet-2.txt bin/
