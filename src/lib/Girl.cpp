@@ -22,10 +22,10 @@ std::string Girl::eyesOpenBoredImage = "../main/girl/eyes-open-bored.txt";
 std::string Girl::eyesClosedBoredImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::mouthBoredImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::attributeBoredImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::eyesOpenAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
+std::string Girl::eyesOpenAngryImage = "../main/girl/eyes-open-angry.txt";
 std::string Girl::eyesClosedAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::mouthAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::attributeAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
+std::string Girl::mouthAngryImage = "../main/girl/mouth-angry.txt";
+std::string Girl::attributeAngryImage = "../main/girl/attribute-angry.txt";
 std::string Girl::mouthSadImage = "../main/girl/mouth-sad.txt";
 std::string Girl::attributeSadImage = "../main/girl/attribute-sad.txt";
 
