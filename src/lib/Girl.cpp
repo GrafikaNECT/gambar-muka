@@ -14,8 +14,10 @@ std::string Girl::mouthNormalImage = "../main/girl/mouth-normal.txt";
 std::string Girl::eyesClosedInLoveImage = "../main/girl/eyes-closed-inlove.txt";
 std::string Girl::mouthInLoveImage = "../main/girl/mouth-inlove.txt";
 std::string Girl::attributeInLoveImage = "../main/girl/attribute-inlove.txt";
-std::string Girl::mouthShockedImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::attributeShockedImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
+std::string Girl::eyesOpenShockedImage = "../main/girl/eyes-open-shocked.txt";
+std::string Girl::eyesClosedShockedImage = "../main/girl/eyes-closed-shocked.txt";
+std::string Girl::mouthShockedImage = "../main/girl/mouth-shocked.txt";
+std::string Girl::attributeShockedImage = "../main/girl/attribute-shocked.txt";
 std::string Girl::mouthHappyImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::attributeHappyImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::eyesOpenBoredImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
@@ -36,7 +38,7 @@ CurveCollection Girl::mouth = CurveCollection(mouthNormalImage);
 CurveCollection Girl::attribute = CurveCollection();
 
 Girl::Girl() {
-	changeEmotionToInLove();
+	changeEmotionToNormal();
 	start();
 }
 
@@ -79,8 +81,8 @@ void Girl::changeEmotionToInLove() {
 }
 
 void Girl::changeEmotionToShock() {
-	Girl::eyesOpen = CurveCollection(eyesOpenNormalImage);
-	Girl::eyesClosed = CurveCollection(eyesClosedNormalImage);
+	Girl::eyesOpen = CurveCollection(eyesOpenShockedImage);
+	Girl::eyesClosed = CurveCollection(eyesClosedShockedImage);
 	Girl::mouth = CurveCollection(mouthShockedImage);
 	Girl::attribute = CurveCollection(attributeShockedImage);
 }

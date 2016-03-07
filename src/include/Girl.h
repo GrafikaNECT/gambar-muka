@@ -35,8 +35,8 @@ private:
 	static std::string mouthInLoveImage;
 	static std::string attributeInLoveImage;
 
-	// eyesOpen = eyesOpenNormal
-	// eyesClosed = eyesClosedNormal
+	static std::string eyesOpenShockedImage;
+	static std::string eyesClosedShockedImage;
 	static std::string mouthShockedImage;
 	static std::string attributeShockedImage;
 
