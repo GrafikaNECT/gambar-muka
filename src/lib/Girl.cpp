@@ -38,7 +38,7 @@ CurveCollection Girl::eyesClosed = CurveCollection(eyesClosedNormalImage);
 CurveCollection Girl::mouth = CurveCollection(mouthNormalImage);
 CurveCollection Girl::attribute = CurveCollection();
 
-std::vector<Point> Girl::canvasEdges({Point(0,0),Point(0,399),Point(399,399),Point(399,0)});
+std::vector<Point> Girl::canvasEdges({Point(0,0),Point(0,599),Point(599,599),Point(599,0)});
 SolidPolygon Girl::canvas(canvasEdges,Texture::createSingleColorTexture(255,255,255,255));
 
 Girl::Girl() {
