@@ -11,9 +11,9 @@ std::string Girl::mouthNormalImage = "../main/girl/mouth-normal.txt";
 // attribute itu kaya love, tanda seru, tangisan, etc.
 // yang mungkin ga ada kaya mata merem pas angry kira kira aja
 
-std::string Girl::eyesClosedInLoveImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::mouthInLoveImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::attributeInLoveImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
+std::string Girl::eyesClosedInLoveImage = "../main/girl/eyes-closed-inlove.txt";
+std::string Girl::mouthInLoveImage = "../main/girl/mouth-inlove.txt";
+std::string Girl::attributeInLoveImage = "../main/girl/attribute-inlove.txt";
 std::string Girl::mouthShockedImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::attributeShockedImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::mouthHappyImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
@@ -26,8 +26,6 @@ std::string Girl::eyesOpenAngryImage = "../main/girl/eyes-open-angry.txt";
 std::string Girl::eyesClosedAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::mouthAngryImage = "../main/girl/mouth-angry.txt";
 std::string Girl::attributeAngryImage = "../main/girl/attribute-angry.txt";
-std::string Girl::eyesOpenSadImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::eyesClosedSadImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::mouthSadImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::attributeSadImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 
@@ -38,7 +36,7 @@ CurveCollection Girl::mouth = CurveCollection(mouthNormalImage);
 CurveCollection Girl::attribute = CurveCollection();
 
 Girl::Girl() {
-	changeEmotionToNormal();
+	changeEmotionToInLove();
 	start();
 }
 
@@ -49,16 +47,19 @@ void* Girl::drawAnimation(void * arg) {
 		eyesOpen.draw();
 		mouth.draw();
 		Printer::printToScreen();
-		sleep(0.1);
+		usleep(25000);
 		attribute.draw();
-		sleep(0.4);
+		Printer::printToScreen();
+		usleep(25000);
 		Printer::drawCanvas(255,255,255,255);
 		face.draw();
 		eyesClosed.draw();
 		mouth.draw();
+		Printer::printToScreen();
+		usleep(25000);
 		attribute.draw();
 		Printer::printToScreen();
-		sleep(0.1);
+		usleep(25000);
 	}
 
 }
@@ -106,8 +107,8 @@ void Girl::changeEmotionToAngry() {
 }
 
 void Girl::changeEmotionToSad() {
-	Girl::eyesOpen = CurveCollection(eyesOpenSadImage);
-	Girl::eyesClosed = CurveCollection(eyesClosedSadImage);
+	Girl::eyesOpen = CurveCollection(eyesOpenBoredImage);
+	Girl::eyesClosed = CurveCollection(eyesClosedInLoveImage);
 	Girl::mouth = CurveCollection(mouthSadImage);
 	Girl::attribute = CurveCollection(attributeSadImage);
 }
