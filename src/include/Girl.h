@@ -52,7 +52,7 @@ private:
 	static std::string attributeBoredImage;
 
 	static std::string eyesOpenAngryImage;
-	static std::string eyesClosedAngryImage;
+	// eyesClosed = eyesInLove
 	static std::string mouthAngryImage;
 	static std::string attributeAngryImage;
 
