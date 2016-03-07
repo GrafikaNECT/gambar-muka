@@ -50,6 +50,7 @@ Texture Texture::fromStream(std::istream& inputfile){
 }
 
 void Texture::draw(int x,int y){
+	if (sizeX<=0 && sizeY<=0) return;
 	int j = x%sizeX;
 	int i = y%sizeY;
 
