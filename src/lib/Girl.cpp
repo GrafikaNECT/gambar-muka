@@ -38,6 +38,9 @@ CurveCollection Girl::eyesClosed = CurveCollection(eyesClosedNormalImage);
 CurveCollection Girl::mouth = CurveCollection(mouthNormalImage);
 CurveCollection Girl::attribute = CurveCollection();
 
+std::vector<Point> Girl::canvasEdges({Point(0,0),Point(0,399),Point(399,399),Point(399,0)});
+SolidPolygon Girl::canvas(canvasEdges,Texture::createSingleColorTexture(255,255,255,255));
+
 Girl::Girl() {
 	changeEmotionToNormal();
 	start();
@@ -45,7 +48,7 @@ Girl::Girl() {
 
 void* Girl::drawAnimation(void * arg) {
 	while (true) {
-		Printer::drawCanvas(255,255,255,255);
+		canvas.draw();
 		face.draw();
 		eyesOpen.draw();
 		mouth.draw();
@@ -54,7 +57,7 @@ void* Girl::drawAnimation(void * arg) {
 		attribute.draw();
 		Printer::printToScreen();
 		usleep(25000);
-		Printer::drawCanvas(255,255,255,255);
+		canvas.draw();
 		face.draw();
 		eyesClosed.draw();
 		mouth.draw();

@@ -5,6 +5,7 @@
 #include "../include/CurveShape.h"
 #include "../include/CurveCollection.h"
 #include "../include/Printer.h"
+#include "../include/SolidPolygon.h"
 #include <string.h>
 #include <pthread.h>
 #include <unistd.h>
@@ -73,6 +74,9 @@ private:
 	static CurveCollection attribute;
 
 	pthread_t m_tid;
+
+	static std::vector<Point> canvasEdges;
+	static SolidPolygon canvas;
 };
 
 #endif
