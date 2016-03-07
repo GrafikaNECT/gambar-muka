@@ -21,16 +21,17 @@ int main(){
 	Alphabet Alphabet2= a1;
 	Alphabetfile.close();
 
-	Alphabet2.drawText("KEYS",530,150,2,139,69,19,255);
-	Alphabet2.drawText("N  NORMAL",530,200,2,139,69,19,255);
-	Alphabet2.drawText("L  IN LOVE",530,250,2,139,69,19,255);
-	Alphabet2.drawText("H  HAPPY",530,300,2,139,69,19,255);
-	Alphabet2.drawText("B  BORED",530,350,2,139,69,19,255);
-	Alphabet2.drawText("A  ANGRY",530,400,2,139,69,19,255);
-	Alphabet2.drawText("S  SHOCK",530,450,2,139,69,19,255);
-	Alphabet2.drawText("C  SAD",530,500,2,139,69,19,255);
-	Alphabet2.drawText("Z  SLEEP",530,550,2,139,69,19,255);
-	Alphabet2.drawText("Q  QUIT",530,600,2,139,69,19,255);
+	Alphabet2.drawText("GRAPHICAT", 600,50,3,255,0,0,255);
+	Alphabet2.drawText("KEYS",600,150,2,139,69,19,255);
+	Alphabet2.drawText("N  NORMAL",600,200,2,139,69,19,255);
+	Alphabet2.drawText("L  IN LOVE",600,250,2,139,69,19,255);
+	Alphabet2.drawText("H  HAPPY",600,300,2,139,69,19,255);
+	Alphabet2.drawText("B  BORED",600,350,2,139,69,19,255);
+	Alphabet2.drawText("A  ANGRY",600,400,2,139,69,19,255);
+	Alphabet2.drawText("S  SHOCK",600,450,2,139,69,19,255);
+	Alphabet2.drawText("C  SAD",600,500,2,139,69,19,255);
+	Alphabet2.drawText("Z  SLEEP",600,550,2,139,69,19,255);
+	Alphabet2.drawText("Q  QUIT",600,600,2,139,69,19,255);
 
 	Printer::printToScreen();
 
