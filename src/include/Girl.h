@@ -17,9 +17,10 @@ public:
 	void changeEmotionToInLove();
 	void changeEmotionToShock();
 	void changeEmotionToHappy();
-	void changeEmotionToBoring();
+	void changeEmotionToBored();
 	void changeEmotionToAngry();
 	void changeEmotionToSad();
+	void goToSleep();
 
 private:
 	int start();
@@ -59,6 +60,11 @@ private:
 	// eyesClosed = eyesClosedInLove
 	static std::string mouthSadImage;
 	static std::string attributeSadImage;
+
+	// eyesOpen = eyesClosedSleep
+	static std::string eyesClosedSleepImage;
+	// mouth = mouthNormal
+	static std::string attributeSleepImage;
 
 	static CurveCollection face;
 	static CurveCollection eyesOpen;

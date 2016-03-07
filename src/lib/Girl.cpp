@@ -28,6 +28,9 @@ std::string Girl::mouthAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::attributeAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::mouthSadImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::attributeSadImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
+std::string Girl::eyesClosedSleepImage = "../main/girl/eyes-closed-sleep.txt";
+std::string Girl::attributeSleepImage = "../main/girl/attribute-sleep.txt";
+
 
 CurveCollection Girl::face = CurveCollection(faceImage);
 CurveCollection Girl::eyesOpen = CurveCollection(eyesOpenNormalImage);
@@ -92,7 +95,7 @@ void Girl::changeEmotionToHappy() {
 	Girl::attribute = CurveCollection(attributeHappyImage);
 }
 
-void Girl::changeEmotionToBoring() {
+void Girl::changeEmotionToBored() {
 	Girl::eyesOpen = CurveCollection(eyesOpenBoredImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedBoredImage);
 	Girl::mouth = CurveCollection(mouthBoredImage);
@@ -113,6 +116,12 @@ void Girl::changeEmotionToSad() {
 	Girl::attribute = CurveCollection(attributeSadImage);
 }
 
+void Girl::goToSleep() {
+	Girl::eyesOpen = CurveCollection(eyesClosedSleepImage);
+	Girl::eyesClosed = CurveCollection(eyesClosedSleepImage);
+	Girl::mouth = CurveCollection(mouthNormalImage);
+	Girl::attribute = CurveCollection(attributeSleepImage);
+}
 
 int Girl::start() {
 	int result = pthread_create(&m_tid, NULL, drawAnimation, this);
