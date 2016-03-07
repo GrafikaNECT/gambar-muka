@@ -13,6 +13,7 @@
 class Girl {
 public:
 	Girl();
+	~Girl();
 	static void* drawAnimation(void* arg);
 	void changeEmotionToNormal(); 
 	void changeEmotionToInLove();
@@ -74,6 +75,7 @@ private:
 	static CurveCollection attribute;
 
 	pthread_t m_tid;
+	pthread_mutex_t lock;
 
 	static std::vector<Point> canvasEdges;
 	static SolidPolygon canvas;

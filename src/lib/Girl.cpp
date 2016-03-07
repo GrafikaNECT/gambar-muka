@@ -43,27 +43,41 @@ SolidPolygon Girl::canvas(canvasEdges,Texture::createSingleColorTexture(255,255,
 
 Girl::Girl() {
 	changeEmotionToNormal();
+	pthread_mutex_init(&lock, NULL);
 	start();
 }
 
+Girl::~Girl() {
+	pthread_mutex_destroy(&lock);
+}
+
 void* Girl::drawAnimation(void * arg) {
+	Girl * caller = (Girl*) arg;
 	while (true) {
+		pthread_mutex_lock(&(caller->lock));
 		canvas.draw();
 		face.draw();
 		eyesOpen.draw();
 		mouth.draw();
+		pthread_mutex_unlock(&(caller->lock));
 		Printer::printToScreen();
 		usleep(25000);
+		pthread_mutex_lock(&(caller->lock));
 		attribute.draw();
+		pthread_mutex_unlock(&(caller->lock));
 		Printer::printToScreen();
 		usleep(25000);
+		pthread_mutex_lock(&(caller->lock));
 		canvas.draw();
 		face.draw();
 		eyesClosed.draw();
 		mouth.draw();
+		pthread_mutex_unlock(&(caller->lock));
 		Printer::printToScreen();
 		usleep(25000);
+		pthread_mutex_lock(&(caller->lock));
 		attribute.draw();
+		pthread_mutex_unlock(&(caller->lock));
 		Printer::printToScreen();
 		usleep(25000);
 	}
@@ -71,59 +85,75 @@ void* Girl::drawAnimation(void * arg) {
 }
 
 void Girl::changeEmotionToNormal() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesOpenNormalImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedNormalImage);
 	Girl::mouth = CurveCollection(mouthNormalImage);
 	Girl::attribute = CurveCollection();
+	pthread_mutex_unlock(&lock);
 }
 
 void Girl::changeEmotionToInLove() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesOpenNormalImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedInLoveImage);
 	Girl::mouth = CurveCollection(mouthInLoveImage);
 	Girl::attribute = CurveCollection(attributeInLoveImage);
+	pthread_mutex_unlock(&lock);
 }
 
 void Girl::changeEmotionToShock() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesOpenShockedImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedShockedImage);
 	Girl::mouth = CurveCollection(mouthShockedImage);
 	Girl::attribute = CurveCollection(attributeShockedImage);
+	pthread_mutex_unlock(&lock);
 }
 
 void Girl::changeEmotionToHappy() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesOpenNormalImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedNormalImage);
 	Girl::mouth = CurveCollection(mouthHappyImage);
 	Girl::attribute = CurveCollection(attributeHappyImage);
+	pthread_mutex_unlock(&lock);
 }
 
 void Girl::changeEmotionToBored() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesOpenBoredImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedBoredImage);
 	Girl::mouth = CurveCollection(mouthBoredImage);
 	Girl::attribute = CurveCollection(attributeBoredImage);
+	pthread_mutex_unlock(&lock);
 }
 
 void Girl::changeEmotionToAngry() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesOpenAngryImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedInLoveImage);
 	Girl::mouth = CurveCollection(mouthAngryImage);
 	Girl::attribute = CurveCollection(attributeAngryImage);
+	pthread_mutex_unlock(&lock);
 }
 
 void Girl::changeEmotionToSad() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesOpenBoredImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedInLoveImage);
 	Girl::mouth = CurveCollection(mouthSadImage);
 	Girl::attribute = CurveCollection(attributeSadImage);
+	pthread_mutex_unlock(&lock);
 }
 
 void Girl::goToSleep() {
+	pthread_mutex_lock(&lock);
 	Girl::eyesOpen = CurveCollection(eyesClosedSleepImage);
 	Girl::eyesClosed = CurveCollection(eyesClosedSleepImage);
 	Girl::mouth = CurveCollection(mouthNormalImage);
 	Girl::attribute = CurveCollection(attributeSleepImage);
+	pthread_mutex_unlock(&lock);
 }
 
 int Girl::start() {
