@@ -42,8 +42,8 @@ std::vector<Point> Girl::canvasEdges({Point(0,0),Point(0,599),Point(599,599),Poi
 SolidPolygon Girl::canvas(canvasEdges,Texture::createSingleColorTexture(255,255,255,255));
 
 Girl::Girl() {
-	changeEmotionToNormal();
 	pthread_mutex_init(&lock, NULL);
+	changeEmotionToNormal();
 	start();
 }
 
