@@ -33,7 +33,7 @@ int main(){
 	Alphabet2.drawText("A: ANGRY",400,400,2,139,69,19,255);
 	Alphabet2.drawText("S: SHOCK",400,450,2,139,69,19,255);
 	Alphabet2.drawText("C: SAD",400,500,2,139,69,19,255);
-	Alphabet2.drawText("Z: SLEEP",40,550,2,139,69,19,255);
+	Alphabet2.drawText("Z: SLEEP",400,550,2,139,69,19,255);
 	Alphabet2.drawText("Q: QUIT",400,600,2,139,69,19,255);
 
 	Printer::printToScreen();

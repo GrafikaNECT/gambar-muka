@@ -1,9 +1,9 @@
 #include "../include/Girl.h"
 
-std::string Girl::faceImage = "../main/girl/face.txt";
-std::string Girl::eyesOpenNormalImage = "../main/girl/eyes-open-normal.txt";
-std::string Girl::eyesClosedNormalImage = "../main/girl/eyes-closed-normal.txt";
-std::string Girl::mouthNormalImage = "../main/girl/mouth-normal.txt";
+std::string Girl::faceImage = "girl/face.txt";
+std::string Girl::eyesOpenNormalImage = "girl/eyes-open-normal.txt";
+std::string Girl::eyesClosedNormalImage = "girl/eyes-closed-normal.txt";
+std::string Girl::mouthNormalImage = "girl/mouth-normal.txt";
 
 // TODO: KEBAWAH INI BELUM ADA GAMBARNYA SEMUA
 // liat aja di gambarnya udah ada semua di sini:
@@ -11,26 +11,26 @@ std::string Girl::mouthNormalImage = "../main/girl/mouth-normal.txt";
 // attribute itu kaya love, tanda seru, tangisan, etc.
 // yang mungkin ga ada kaya mata merem pas angry kira kira aja
 
-std::string Girl::eyesClosedInLoveImage = "../main/girl/eyes-closed-inlove.txt";
-std::string Girl::mouthInLoveImage = "../main/girl/mouth-inlove.txt";
-std::string Girl::attributeInLoveImage = "../main/girl/attribute-inlove.txt";
-std::string Girl::eyesOpenShockedImage = "../main/girl/eyes-open-shocked.txt";
-std::string Girl::eyesClosedShockedImage = "../main/girl/eyes-closed-shocked.txt";
-std::string Girl::mouthShockedImage = "../main/girl/mouth-shocked.txt";
-std::string Girl::attributeShockedImage = "../main/girl/attribute-shocked.txt";
-std::string Girl::mouthHappyImage = "../main/girl/mouth-happy.txt";
-std::string Girl::attributeHappyImage = "../main/girl/attribute-happy.txt";
-std::string Girl::eyesOpenBoredImage = "../main/girl/eyes-open-bored.txt";
-std::string Girl::eyesClosedBoredImage = "../main/girl/eyes-closed-sleep.txt";
-std::string Girl::mouthBoredImage = "../main/girl/mouth-bored.txt";
-std::string Girl::attributeBoredImage = "../main/girl/attribute-bored.txt";
-std::string Girl::eyesOpenAngryImage = "../main/girl/eyes-open-angry.txt";
-std::string Girl::mouthAngryImage = "../main/girl/mouth-angry.txt";
-std::string Girl::attributeAngryImage = "../main/girl/attribute-angry.txt";
-std::string Girl::mouthSadImage = "../main/girl/mouth-sad.txt";
-std::string Girl::attributeSadImage = "../main/girl/attribute-sad.txt";
-std::string Girl::eyesClosedSleepImage = "../main/girl/eyes-closed-sleep.txt";
-std::string Girl::attributeSleepImage = "../main/girl/attribute-sleep.txt";
+std::string Girl::eyesClosedInLoveImage = "girl/eyes-closed-inlove.txt";
+std::string Girl::mouthInLoveImage = "girl/mouth-inlove.txt";
+std::string Girl::attributeInLoveImage = "girl/attribute-inlove.txt";
+std::string Girl::eyesOpenShockedImage = "girl/eyes-open-shocked.txt";
+std::string Girl::eyesClosedShockedImage = "girl/eyes-closed-shocked.txt";
+std::string Girl::mouthShockedImage = "girl/mouth-shocked.txt";
+std::string Girl::attributeShockedImage = "girl/attribute-shocked.txt";
+std::string Girl::mouthHappyImage = "girl/mouth-happy.txt";
+std::string Girl::attributeHappyImage = "girl/attribute-happy.txt";
+std::string Girl::eyesOpenBoredImage = "girl/eyes-open-bored.txt";
+std::string Girl::eyesClosedBoredImage = "girl/eyes-closed-sleep.txt";
+std::string Girl::mouthBoredImage = "girl/mouth-bored.txt";
+std::string Girl::attributeBoredImage = "girl/attribute-bored.txt";
+std::string Girl::eyesOpenAngryImage = "girl/eyes-open-angry.txt";
+std::string Girl::mouthAngryImage = "girl/mouth-angry.txt";
+std::string Girl::attributeAngryImage = "girl/attribute-angry.txt";
+std::string Girl::mouthSadImage = "girl/mouth-sad.txt";
+std::string Girl::attributeSadImage = "girl/attribute-sad.txt";
+std::string Girl::eyesClosedSleepImage = "girl/eyes-closed-sleep.txt";
+std::string Girl::attributeSleepImage = "girl/attribute-sleep.txt";
 
 CurveCollection Girl::face = CurveCollection(faceImage);
 CurveCollection Girl::eyesOpen = CurveCollection(eyesOpenNormalImage);
