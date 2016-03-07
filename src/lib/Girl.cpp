@@ -18,14 +18,13 @@ std::string Girl::eyesOpenShockedImage = "../main/girl/eyes-open-shocked.txt";
 std::string Girl::eyesClosedShockedImage = "../main/girl/eyes-closed-shocked.txt";
 std::string Girl::mouthShockedImage = "../main/girl/mouth-shocked.txt";
 std::string Girl::attributeShockedImage = "../main/girl/attribute-shocked.txt";
-std::string Girl::mouthHappyImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::attributeHappyImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
+std::string Girl::mouthHappyImage = "../main/girl/mouth-happy.txt";
+std::string Girl::attributeHappyImage = "../main/girl/attribute-happy.txt";
 std::string Girl::eyesOpenBoredImage = "../main/girl/eyes-open-bored.txt";
-std::string Girl::eyesClosedBoredImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::mouthBoredImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
-std::string Girl::attributeBoredImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
+std::string Girl::eyesClosedBoredImage = "../main/girl/eyes-closed-sleep.txt";
+std::string Girl::mouthBoredImage = "../main/girl/mouth-bored.txt";
+std::string Girl::attributeBoredImage = "../main/girl/attribute-bored.txt";
 std::string Girl::eyesOpenAngryImage = "../main/girl/eyes-open-angry.txt";
-std::string Girl::eyesClosedAngryImage = "../main/girl/NOTIMPLEMENTEDYET.txt";
 std::string Girl::mouthAngryImage = "../main/girl/mouth-angry.txt";
 std::string Girl::attributeAngryImage = "../main/girl/attribute-angry.txt";
 std::string Girl::mouthSadImage = "../main/girl/mouth-sad.txt";
@@ -105,7 +104,7 @@ void Girl::changeEmotionToBored() {
 
 void Girl::changeEmotionToAngry() {
 	Girl::eyesOpen = CurveCollection(eyesOpenAngryImage);
-	Girl::eyesClosed = CurveCollection(eyesOpenAngryImage);
+	Girl::eyesClosed = CurveCollection(eyesClosedInLoveImage);
 	Girl::mouth = CurveCollection(mouthAngryImage);
 	Girl::attribute = CurveCollection(attributeAngryImage);
 }
