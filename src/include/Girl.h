@@ -55,8 +55,8 @@ private:
 	static std::string mouthAngryImage;
 	static std::string attributeAngryImage;
 
-	static std::string eyesOpenSadImage;
-	static std::string eyesClosedSadImage;
+	// eyesOpen = eyesClosedBored
+	// eyesClosed = eyesClosedInLove
 	static std::string mouthSadImage;
 	static std::string attributeSadImage;
 
