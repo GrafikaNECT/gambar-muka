@@ -5,6 +5,7 @@
 #include "../include/CurveShape.h"
 #include "../include/CurveCollection.h"
 #include "../include/Printer.h"
+#include "../include/SolidPolygon.h"
 #include <string.h>
 #include <pthread.h>
 #include <unistd.h>
@@ -52,7 +53,7 @@ private:
 	static std::string attributeBoredImage;
 
 	static std::string eyesOpenAngryImage;
-	static std::string eyesClosedAngryImage;
+	// eyesClosed = eyesInLove
 	static std::string mouthAngryImage;
 	static std::string attributeAngryImage;
 
@@ -73,6 +74,9 @@ private:
 	static CurveCollection attribute;
 
 	pthread_t m_tid;
+
+	static std::vector<Point> canvasEdges;
+	static SolidPolygon canvas;
 };
 
 #endif

@@ -23,8 +23,20 @@ int main(){
 
 	Alphabet2.drawTextCentered("GRAPHICAT",50,3,255,0,0,255);
 	Printer::printToScreen();
-
 	sleep(1);
+
+	Alphabet2.drawText("KEYS",600,150,2,139,69,19,255);
+	Alphabet2.drawText("N  NORMAL",600,200,2,139,69,19,255);
+	Alphabet2.drawText("L  IN LOVE",6000,250,2,139,69,19,255);
+	Alphabet2.drawText("H  HAPPY",600,300,2,139,69,19,255);
+	Alphabet2.drawText("B  BORED",600,350,2,139,69,19,255);
+	Alphabet2.drawText("A  ANGRY",600,400,2,139,69,19,255);
+	Alphabet2.drawText("S  SHOCK",600,450,2,139,69,19,255);
+	Alphabet2.drawText("C  SAD",600,500,2,139,69,19,255);
+	Alphabet2.drawText("Z  SLEEP",600,550,2,139,69,19,255);
+	Alphabet2.drawText("Q  QUIT",600,600,2,139,69,19,255);
+
+	Printer::printToScreen();
 
 	Girl girl = Girl();
 
